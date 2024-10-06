@@ -1,4 +1,4 @@
-from sklearn.feature_extraction.text import CountVectorizer #hoa vector text
+from sklearn.feature_extraction.text import CountVectorizer 
 from sklearn.naive_bayes import MultinomialNB
 import pandas as pd
 import numpy as np
@@ -11,9 +11,9 @@ df = pd.read_csv("https://raw.githubusercontent.com/amankharwal/Website-data/mas
 X = np.array(df["Text"])
 Y = df["language"]
 
-# print(Y.value_counts())  // dem xem co bao nhieu ngon ngu va van ban
+# print(Y.value_counts())  
 
-cv = CountVectorizer()  #vector hoa text
+cv = CountVectorizer()  
 
 X = cv.fit_transform(X)
 
@@ -25,12 +25,11 @@ model.fit(X_train,Y_train)
 
 Y_pred = model.predict(X_test)
 
-# print(f"Accuracy: {100*accuracy_score(Y_pred,Y_test):.2f}%")      #kiem tra accuracy bao nhieu %
+print(f"Accuracy: {100*accuracy_score(Y_pred,Y_test):.2f}%")      
 
 Users = input("Nhap van ban: ")
 
-test = cv.transform([Users]).toarray()   # vector hoa text
-# print(test)                              # in ra cac text da hoa vector dang 0 1
+test = cv.transform([Users]).toarray()                              
 
 output = model.predict(test)
 print(output)
