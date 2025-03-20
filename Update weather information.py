@@ -6,7 +6,7 @@ import os
 
 previous_weather_data = None
 
-def fetch_weather_data(city, api_key="c898411271d292f65b6e627be80c0239"):
+def fetch_weather_data(city, api_key="####"):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     
     try:
