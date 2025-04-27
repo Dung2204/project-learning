@@ -1,8 +1,6 @@
 import streamlit as st
 
-# Import các hàm từ ứng dụng con
-from DeleteImg import run_DeleteBackground_app
-
+from Deleteimg import run_DeleteBackground_app
 
 # Cấu hình trang chính - phải được gọi ngay đầu file
 st.set_page_config(page_title="Multi-App", layout="wide")
@@ -10,13 +8,13 @@ st.set_page_config(page_title="Multi-App", layout="wide")
 # Sidebar chứa menu ứng dụng
 st.sidebar.title("Home page")
 app_choice = st.sidebar.selectbox(
-    "Chọn mục ứng dụng:",
-    ["DeleteBackgroundImg"]
+    "Chọn ứng dụng:",
+    ["Delete"]
 )
 
 # Nội dung chính của trang
 st.title("Chương Trình Ứng Dụng")
 
-# Điều hướng đến ứng dụng được chọn
-if app_choice == "Delete Background Image":
+# Điều hướng đến ứng dụng được chọn     
+if app_choice == "Delete":
     run_DeleteBackground_app()
