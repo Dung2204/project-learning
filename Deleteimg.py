@@ -125,6 +125,11 @@ def run_DeleteBackground_app():
             border-radius: 5px;
             padding: 10px;
         }
+        .fixed-size-image {
+            width: 500px !important;
+            height: auto !important;
+            object-fit: contain;
+        }
         </style>
     """, unsafe_allow_html=True)
 
@@ -137,7 +142,7 @@ def run_DeleteBackground_app():
         with st.container():
             with st.container():
                 if st.session_state.get("image_processed", None) is not None:
-                    st.image(st.session_state.image_processed, caption="Processed Image", use_container_width=True)
+                    st.image(st.session_state.image_processed, caption="Processed Image", use_container_width=False, width=500)
                     img_byte_arr = io.BytesIO()
                     st.session_state.image_processed.save(img_byte_arr, format="JPEG")
                     img_byte_arr = img_byte_arr.getvalue()
@@ -191,7 +196,7 @@ def run_DeleteBackground_app():
                     st.session_state.data_loaded = True
                     file_type = uploaded_file.type
                     if file_type.startswith("image"):
-                        st.image(uploaded_file, caption="Original Image", use_container_width=True)
+                        st.image(uploaded_file, caption="Original Image", use_container_width=False, width=500)
                     elif file_type.startswith("video"):
                         st.video(uploaded_file)
                     st.success("Data uploaded successfully!")
