@@ -12,8 +12,6 @@ app_choice = st.sidebar.selectbox(
     ["Delete"]
 )
 
-# Nội dung chính của trang
-st.title("Chương Trình Ứng Dụng")
 
 # Điều hướng đến ứng dụng được chọn     
 if app_choice == "Delete":
