@@ -9,10 +9,10 @@ st.set_page_config(page_title="Multi-App", layout="wide")
 st.sidebar.title("Home page")
 app_choice = st.sidebar.selectbox(
     "Chọn ứng dụng:",
-    ["Delete"]
+    ["Delete Background Image"]
 )
 
 
 # Điều hướng đến ứng dụng được chọn     
-if app_choice == "Delete":
+if app_choice == "Delete Background Image":
     run_DeleteBackground_app()
