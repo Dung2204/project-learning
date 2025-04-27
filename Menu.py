@@ -10,7 +10,7 @@ st.set_page_config(page_title="Multi-App", layout="wide")
 # Sidebar chứa menu ứng dụng
 st.sidebar.title("Home page")
 app_choice = st.sidebar.selectbox(
-    "Chọn ứng dụng:",
+    "Chọn mục ứng dụng:",
     ["DeleteBackgroundImg"]
 )
 
